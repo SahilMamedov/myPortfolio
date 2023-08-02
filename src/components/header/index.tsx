@@ -1,10 +1,19 @@
 import * as React from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
-import { AvatarBox, NavbarBox, NavbarWrapper, StyledHeader } from "./styled";
+import {
+  AvatarBox,
+  NavbarBox,
+  NavbarWrapper,
+  StyledHeader,
+  TitleName,
+  variants,
+} from "./styled";
 import { Navigation } from "./Navigation";
 import { MenuToggle } from "./MenuToggle";
 import Avatar from "components/header/Avatar";
+import Socials from "./Socials";
+import { MenuItemvariants } from "components/shared/MenuItemVariants";
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
@@ -31,6 +40,7 @@ export const Header = () => {
 
   return (
     <StyledHeader
+      variants={variants}
       initial={true}
       animate={isOpen ? "open" : "closed"}
       ref={containerRef}
@@ -40,6 +50,10 @@ export const Header = () => {
           <AvatarBox>
             <Avatar />
           </AvatarBox>
+          <motion.div variants={MenuItemvariants}>
+            <TitleName>Sahil Mamedov</TitleName>
+          </motion.div>
+          <Socials />
           <Navigation />
         </NavbarBox>
       </NavbarWrapper>

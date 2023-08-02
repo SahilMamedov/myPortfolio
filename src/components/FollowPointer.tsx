@@ -1,32 +1,23 @@
-
+import "../App.css";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useFollowPointer } from "hook/use-follow-pointer";
-import { styled } from "styled-components";
+import { useFollowPointer } from "../hook/use-follow-pointer";
 
-const FollowPointer = () => {
+export default function FollowPointer() {
   const ref = useRef(null);
   const { x, y } = useFollowPointer(ref);
 
-  const Box = styled.div`
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: red;
-  `;
-  const StyledBox = motion(Box);
-
   return (
-    <StyledBox
+    <motion.div
       ref={ref}
+      className="w-5 h-5 rounded-full bg-sky-500 "
       animate={{ x, y }}
       transition={{
         type: "spring",
-        damping: 3,
-        stiffness: 50,
+        damping: 10,
+        stiffness: 100,
         restDelta: 0.001,
       }}
     />
   );
-};
-export default FollowPointer;
+}

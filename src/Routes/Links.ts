@@ -1,5 +1,9 @@
 export const Links={
     app:{
-        home:'/'
+        home:'/',
+        about:'/about',
+        project:'/project',
+        skills:'/skills',
+        contact:'/contact',
     }
 }

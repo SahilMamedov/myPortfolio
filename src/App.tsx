@@ -1,16 +1,21 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import AppRoutes from "./Routes/routes";
 import FollowPointer from "components/FollowPointer";
-
+import Transition from "components/Transition";
+import { AnimatePresence, motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 function App() {
-  return(
-    <>
-    <FollowPointer />
-    <AppRoutes />
-  </>
-  )
+  const { pathname } = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div key={pathname} className="h-full">
+        <Transition />
+        <FollowPointer />
+        <AppRoutes />
+      </motion.div>
+    </AnimatePresence>
+  );
 }
 
 export default App;
