@@ -39,26 +39,28 @@ export const Header = () => {
   const containerRef = useRef(null);
 
   return (
-    <StyledHeader
-      variants={variants}
-      initial={true}
-      animate={isOpen ? "open" : "closed"}
-      ref={containerRef}
-    >
-      <NavbarWrapper variants={sidebar}>
-        <NavbarBox>
-          <AvatarBox>
-            <Avatar />
-          </AvatarBox>
-          <motion.div variants={MenuItemvariants}>
-            <TitleName>Sahil Mamedov</TitleName>
-          </motion.div>
-          <Socials />
-          <Navigation />
-        </NavbarBox>
-      </NavbarWrapper>
+    <div className="z-50">
+      <StyledHeader
+        variants={variants}
+        initial={true}
+        animate={isOpen ? "open" : "closed"}
+        ref={containerRef}
+      >
+        <NavbarWrapper variants={sidebar}>
+          <NavbarBox>
+            <AvatarBox>
+              <Avatar />
+            </AvatarBox>
+            <motion.div variants={MenuItemvariants}>
+              <TitleName>Sahil Mamedov</TitleName>
+            </motion.div>
+            <Socials />
+            <Navigation />
+          </NavbarBox>
+        </NavbarWrapper>
 
-      <MenuToggle toggle={() => toggleOpen()} />
-    </StyledHeader>
+        <MenuToggle toggle={() => toggleOpen()} />
+      </StyledHeader>
+    </div>
   );
 };

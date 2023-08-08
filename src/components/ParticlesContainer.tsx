@@ -11,11 +11,11 @@ const ParticlesContainer = () => {
   const particlesLoaded = useCallback(async () => {}, []);
 
   return (
-    <div className="flex ">
-      <div className="w-2/5">s</div>
+    <div >
+      
       <div>
         <Particles
-          className="h-full absolute traslate-z-0"
+          className="h-full w-3/5 right-0 absolute traslate-z-0 z-0"
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}

@@ -11,7 +11,7 @@ function App() {
     <AnimatePresence mode="wait">
       <motion.div key={pathname} className="h-full">
         <Transition />
-        <FollowPointer />
+        {/* <FollowPointer /> */}
         <AppRoutes />
       </motion.div>
     </AnimatePresence>

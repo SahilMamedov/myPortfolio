@@ -9,7 +9,8 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: Poppins,sans-serif;
-  background: linear-gradient(180deg, #7dabc7 0%, rgb(10, 42, 63) 100%);
+  background: linear-gradient(180deg, #325c75 0%, rgb(14, 34, 48) 100%);
+ 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,7 +22,7 @@ code {
 .navBtn {
   outline: none;
   border: none;
-
+  z-index: 3;
   cursor: pointer;
   position: absolute;
   top: 18px;

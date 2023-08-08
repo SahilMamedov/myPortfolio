@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 export const Header=styled.div`
  color: white;
-  width: 250px;
   @media only screen and (max-width: 426px) {
     display: none;
     }
@@ -16,6 +15,7 @@ export const StyledHeader=motion(Header)
 
 export const StyledNavbarWrapper=styled.div`
   position: absolute;
+  z-index: 2;
   top: 0;
   left: 0;
   right: 0;
@@ -45,6 +45,7 @@ align-items: center;
 justify-content: center;
 border-radius: 50%;
 border: 6px solid #2c2f3f;
+
 `
 export const SocialItem=motion(StyledSocialItem)
 

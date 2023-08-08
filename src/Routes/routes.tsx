@@ -1,15 +1,14 @@
-
 import { Route, Routes } from "react-router-dom";
 import { Links } from "./Links";
 import AppLayout from "../Layouts/AppLayout";
-import Home from "../pages";
-
+import Home from "../pages/home";
 import About from "pages/about";
 import Project from "pages/project";
 import Skills from "pages/skills";
 import Contact from "pages/contact";
 
 const AppRoutes = () => {
+
   return (
     <Routes>
       <Route path={Links.app.home} element={<AppLayout />}>
