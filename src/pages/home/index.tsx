@@ -1,13 +1,12 @@
 import ParticlesContainer from "components/ParticlesContainer";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import masin from "assest/image/masin.jpg";
 import { styled } from "styled-components";
 import myPhoto from "assest/image/myPhoto.jpg";
 import { Title, Wrapper } from "./styled";
 import { StyledSun } from "components/Sun";
 export default function Home() {
   const [text] = useTypewriter({
-    words: ["Programmer ",'And', "Front end Developer"],
+    words: ["Programmer ", "And", "Front end Developer"],
     loop: true,
     typeSpeed: 40,
     deleteSpeed: 30,
@@ -30,17 +29,14 @@ export default function Home() {
   `;
   return (
     <main>
-       
       <Wrapper>
         <div className="w-3/5">
           <Box>
-            <Title>I'm</Title>
-            <div className="text-yellow-500">
+            <Title>Hello I'm</Title>
+            <div className="text-yellow-500 pl-7">
               {text} <Cursor cursorBlinking={true} cursorColor="red" />
             </div>
-            
           </Box>
-          
         </div>
         <StyledSun />
         <ParticlesContainer />

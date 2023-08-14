@@ -12,12 +12,12 @@ export default function FollowPointer() {
     <FollowPointerBox>
       <motion.div
         ref={ref}
-        className="w-5 h-5 rounded-full bg-sky-500 "
+        className="w-5 h-5 absolute  rounded-full bg-sky-500 "
         animate={{ x, y }}
         transition={{
           type: "spring",
           damping: 10,
-          stiffness: 100,
+          stiffness: 300,
           restDelta: 0.001,
         }}
       />

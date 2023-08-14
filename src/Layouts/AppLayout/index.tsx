@@ -17,9 +17,9 @@ const AppLayout = () => {
   }, [pathname]);
 
   return (
-    <div >
+    <div>
       <Header />
-      <PhoneSideBar/>
+      <PhoneSideBar />
       {isTransitioning && <Outlet />}
     </div>
   );

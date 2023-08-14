@@ -9,8 +9,9 @@ const orbitAnimation = keyframes`
 const Box = styled.body`
   margin: 0;
   position: absolute;
-  z-index: -100;
-right: 0;
+  z-index: -10;
+  right: 0;
+  margin-right: 50px;
 `;
 
 const Container = styled.div`

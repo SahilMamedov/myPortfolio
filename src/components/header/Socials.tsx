@@ -14,6 +14,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { NavLink } from "react-router-dom";
 import { MenuItemvariants } from "components/shared/MenuItemVariants";
 import ReactWhatsapp from "react-whatsapp";
+import WhatsappMessage from "components/shared/WhatsappMessage";
 const Socials = () => {
   return (
     <SocialBox variants={variants}>
@@ -45,14 +46,9 @@ const Socials = () => {
         transition={SocialIconTansition}
         variants={MenuItemvariants}
       >
-        <ReactWhatsapp
-          element="webview"
-          number="+994 504055044"
-          message="Mene yaz"
-          style={{ display: "flex" }}
-        >
+        <WhatsappMessage>
           <WhatsAppIcon style={IconStyle} />
-        </ReactWhatsapp>
+        </WhatsappMessage>
       </SocialItem>
       <NavLink to="https://github.com/SahilMamedov" target="_blank">
         <SocialItem

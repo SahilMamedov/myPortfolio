@@ -1,17 +1,26 @@
 import { useRef } from "react";
 import {
-  ContaxtTitle,
+  ContactBox,
+  ContactTitle,
   SendButton,
   SendButtonBox,
   StyledTextField,
   TextFieldMessage,
   Wrapper,
+  IconBox,
+  LocationBox,
+  Container,
 } from "./styled";
 import emailjs from "@emailjs/browser";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import ReactWhatsapp from "react-whatsapp";
-
+import CallIcon from "@mui/icons-material/Call";
+import WhatsappMessage from "components/shared/WhatsappMessage";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { SocialIconHover, SocialIconTansition } from "components/header/styled";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const form = useRef();
   const sendEmail = (e: any) => {
@@ -25,12 +34,19 @@ const Contact = () => {
           "xLrhwK9Io5rGg6k4M"
         )
         .then(
-          (result: any) => {
-            console.log(result.text);
-            console.log("mesaj gonderildi");
+          () => {
+            toast.success("Mesajiniz gonderildi", {
+              position: "bottom-right",
+              autoClose: 2000,
+              theme: "colored",
+            });
           },
-          (error: any) => {
-            console.log(error.text);
+          () => {
+            toast.error("Mesajiniz gonderildi", {
+              position: "bottom-right",
+              autoClose: 2000,
+              theme: "colored",
+            });
           }
         );
       e.target.reset();
@@ -39,18 +55,53 @@ const Contact = () => {
 
   return (
     <Wrapper>
-      <Box>
-        <ReactWhatsapp
-          className=""
-          element="webview"
-          number="+994 504055044"
-          message="Mene yaz"
+      <Container>
+        <div className="w-full">
+          <ContactBox
+            transition={SocialIconTansition}
+            whileHover={SocialIconHover}
+          >
+            <IconBox>
+              <WhatsAppIcon />
+            </IconBox>
+            <WhatsappMessage content="Whatsapp" />
+          </ContactBox>
+          <ContactBox
+            transition={SocialIconTansition}
+            whileHover={SocialIconHover}
+          >
+            <IconBox>
+              <CallIcon />
+            </IconBox>
+            <div>(994+)50-405-50-44</div>
+          </ContactBox>
+          <ContactBox
+            transition={SocialIconTansition}
+            whileHover={SocialIconHover}
+          >
+            <IconBox>
+              <LocationOnIcon />
+            </IconBox>
+            <div>Azerbaijan,baku</div>
+          </ContactBox>
+        </div>
+        <LocationBox
+          transition={SocialIconTansition}
+          whileHover={SocialIconHover}
         >
-          Whatsapp
-        </ReactWhatsapp>
-      </Box>
-      <Box component="form" ref={form} onSubmit={sendEmail}>
-        <ContaxtTitle>Get In Touch</ContaxtTitle>
+          <iframe
+            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            src="https://www.google.com/maps/embed/v1/place?q=Koroğlu,+Baku,+Azerbaijan&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          />
+        </LocationBox>
+      </Container>
+      <Box
+        className="border-solid  border-2 border-indigo-900 p-3 pb-0 rounded-lg"
+        component="form"
+        ref={form}
+        onSubmit={sendEmail}
+      >
+        <ContactTitle>Get In Touch</ContactTitle>
         <div>
           <div className=" flex gap-6 mb-6">
             <StyledTextField>
@@ -64,7 +115,6 @@ const Contact = () => {
             </StyledTextField>
             <StyledTextField>
               <TextField
-                required
                 color="primary"
                 label="Surname"
                 name="user_surname"
@@ -83,6 +133,7 @@ const Contact = () => {
           </StyledTextField>
           <StyledTextField className="mb-6">
             <TextField
+              required
               color="primary"
               fullWidth
               type="email"
@@ -93,6 +144,7 @@ const Contact = () => {
           </StyledTextField>
           <StyledTextField>
             <TextField
+              required
               label="Message"
               name="message"
               multiline
@@ -100,6 +152,7 @@ const Contact = () => {
               variant="filled"
               fullWidth
               style={TextFieldMessage}
+              inputProps={{ style: { color: "yellow" } }}
             />
           </StyledTextField>
           <SendButtonBox>

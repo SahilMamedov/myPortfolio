@@ -90,7 +90,9 @@ export const IconStyle={
 
 
 export const SocialIconHover={scale: 1.1,color:'#0965ee'}
+
 export const SocialIconTansition={type: "spring",stiffness: 250,damping: 4 }
+
 export const variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },

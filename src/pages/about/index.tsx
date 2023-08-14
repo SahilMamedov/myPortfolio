@@ -1,10 +1,11 @@
 import React from 'react'
+import { Container, Wrapper } from './styled'
 
 const About = () => {
   return (
-    <div>
-      ABOUT
-    </div>
+    <Wrapper>
+      <Container>salam</Container>
+    </Wrapper>
   )
 }
 
