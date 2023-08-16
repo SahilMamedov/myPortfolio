@@ -1,12 +1,10 @@
-import React from 'react'
-import { Container, Wrapper } from './styled'
+import React from "react";
 
 const About = () => {
   return (
-    <Wrapper>
-      <Container>salam</Container>
-    </Wrapper>
-  )
-}
+   <div>About</div>
+  );
+};
 
-export default About
+
+export default About;
