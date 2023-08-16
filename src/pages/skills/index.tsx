@@ -15,7 +15,7 @@ const Skills = () => {
   const [rotate, setRotate] = useState(true);
 
   return (
-    <div className="h-screen">
+    <div className="h-screen ">
       <SkilsTitle>
         <div>My Skills</div>
       </SkilsTitle>

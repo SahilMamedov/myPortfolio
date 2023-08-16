@@ -26,7 +26,6 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
     align-items: center;
     @media only screen and (max-width: 320px) {
     
