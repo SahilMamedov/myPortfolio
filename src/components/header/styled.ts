@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export const Header=styled.div`
  color: white;
-  @media only screen and (max-width: 426px) {
+  @media only screen and (max-width: 430px) {
     display: none;
     }
 `

@@ -10,7 +10,7 @@ position: fixed;
 bottom: 0px;
 background-color: #055e81;
 z-index: 2;
- @media only screen and (min-width: 426px) {
+ @media only screen and (min-width: 430px) {
     display: none;
   }
 `

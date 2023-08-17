@@ -1,44 +1,75 @@
-import React, { useState } from "react";
-import js from "../../assest/image/js.png";
-
-import {
-  SkillItem,
-  Wrapper,
-  Container,
-  SkillContainer,
-  JavascriptImg,
-  SkilsTitle,
-} from "./styled";
-import { SkillImages } from "components/SkillsImages";
+import jsImage from "../../assest/image/js.png";
+import { ExperienceImages, SkillImages } from "components/SkillsImages";
+import { useState } from "react";
 import Tooltip from "@mui/material/Tooltip";
-const Skills = () => {
-  const [rotate, setRotate] = useState(true);
+import experinceImage from "../../assest/image/experience.png";
+import {
+  ExperienceBox,
+  SkillsBox,
+  JsImage,
+  SkillContainer,
+  SkillItem,
+  ExperienceContainer,
+  ExperienceImage,
+  ExperinceItem,
+  Container,
+  SkillTitle,
+  Wrapper,
+} from "./styled";
 
+const Skills = () => {
+  const [skillRotate, setskillRotate] = useState(true);
+  const [ExperienceRotate, setExperienceRotate] = useState(true);
   return (
-    <div className="h-screen ">
-      <SkilsTitle>
-        <div>My Skills</div>
-      </SkilsTitle>
+    <Container>
+      <SkillTitle>My Skills</SkillTitle>
       <Wrapper>
-        <Container>
-          <SkillContainer rotate={rotate}>
-            {SkillImages.map((img) => (
-              <Tooltip placement="top" title={rotate ? "" : `${img.tooltip}`}>
-                <SkillItem
-                  key={img.src}
+        <ExperienceBox>
+          <ExperienceContainer experienceRotate={ExperienceRotate}>
+            {ExperienceImages.map((img) => (
+              <Tooltip
+                placement="top"
+                title={ExperienceRotate ? "" : `${img.tooltip}`}
+              >
+                <ExperinceItem
+                  translateValue={img.translateValue}
+                  src={img.src}
                   bordercolor={img.borderColor}
-                  alt=""
+                />
+              </Tooltip>
+            ))}
+          </ExperienceContainer>
+          <Tooltip placement="top" title={ExperienceRotate ? "" : "Experience"}>
+            <ExperienceImage
+              onClick={() => setExperienceRotate(!ExperienceRotate)}
+              src={experinceImage}
+            />
+          </Tooltip>
+        </ExperienceBox>
+        <SkillsBox>
+          <SkillContainer skillRotate={skillRotate}>
+            {SkillImages.map((img) => (
+              <Tooltip
+                placement="top"
+                title={skillRotate ? "" : `${img.tooltip}`}
+              >
+                <SkillItem
+                  translateValue={img.translateValue}
+                  bordercolor={img.borderColor}
                   src={img.src}
                 />
               </Tooltip>
             ))}
           </SkillContainer>
-          <Tooltip placement="top" title={rotate ? "" : "Javascript"}>
-            <JavascriptImg onClick={() => setRotate(!rotate)} src={js} alt="" />
+          <Tooltip placement="top" title={skillRotate ? "" : "Javascript"}>
+            <JsImage
+              src={jsImage}
+              onClick={() => setskillRotate(!skillRotate)}
+            />
           </Tooltip>
-        </Container>
+        </SkillsBox>
       </Wrapper>
-    </div>
+    </Container>
   );
 };
 
